@@ -9,12 +9,12 @@ import {
   Node,
   Program,
   ScriptTarget,
-  SourceFile
+  SourceFile,
 } from 'typescript';
 import { EnumEntry } from '../../models/enum-entry/enum-entry.model';
 import {
   EnumValue,
-  EnumValueType
+  EnumValueType,
 } from '../../models/enum-value/enum-value.model';
 import { Language } from '../../utils/language.enums';
 import { FileParser } from '../file.parser';
@@ -33,7 +33,7 @@ export class TypescriptParser extends FileParser {
       experimentalDecorators: true,
       noResolve: true,
       preserveConstEnums: true,
-      target: ScriptTarget.Latest
+      target: ScriptTarget.Latest,
     };
 
     const program: Program = createProgram([filePath], compilerOptions);
@@ -45,7 +45,7 @@ export class TypescriptParser extends FileParser {
         if (isEnumDeclaration(node)) {
           const entry = new EnumEntry(node.name.text);
 
-          node.members.forEach(member => {
+          node.members.forEach((member) => {
             if (isEnumMember(member)) {
               let enumName: string | undefined;
               let enumValue: EnumValueType | undefined;

@@ -2,7 +2,7 @@ import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { fileSync } from 'tmp';
 import {
   ApiConfiguration,
-  ConfigurationOptions
+  ConfigurationOptions,
 } from '../config/configuration-options.type';
 import { createDumperFromLanguage } from '../dumpers/dumpers.utils';
 import { FileDumper } from '../dumpers/file.dumper';
@@ -10,7 +10,7 @@ import { FileParser } from '../parsers/file.parser';
 import {
   languageFromFilePath,
   parserFromLanguage,
-  suffixFromLanguage
+  suffixFromLanguage,
 } from '../parsers/parsers.utils';
 import { Language } from '../utils/language.enums';
 
@@ -81,7 +81,7 @@ export function convertConfig(
 
 export function convertApi(apiConfig: ApiConfiguration): void {
   const config: ConfigurationOptions = {
-    ...(apiConfig as ConfigurationOptions)
+    ...(apiConfig as ConfigurationOptions),
   };
 
   const sourceFileName: string | undefined = apiConfig.file;

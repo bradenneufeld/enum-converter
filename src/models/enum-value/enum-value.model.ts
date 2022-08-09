@@ -2,7 +2,8 @@ import { styleString } from '../../utils/string-styler/string-styler';
 import { StringStyle } from '../../utils/string-styler/string-styler.enums';
 
 // null = use previous value (auto)
-export type EnumValueType = string | number | boolean | null;
+type indexedValue = { index: number; value: string };
+export type EnumValueType = indexedValue | string | number | boolean | null;
 
 export class EnumValue {
   name: string;

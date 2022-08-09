@@ -9,12 +9,12 @@ import {
   Node,
   Program,
   ScriptTarget,
-  SourceFile
+  SourceFile,
 } from 'typescript';
 import { EnumEntry } from '../../models/enum-entry/enum-entry.model';
 import {
   EnumValue,
-  EnumValueType
+  EnumValueType,
 } from '../../models/enum-value/enum-value.model';
 import { Language } from '../../utils/language.enums';
 import { FileParser } from '../file.parser';

@@ -9,9 +9,7 @@ describe('CLI', () => {
   const pythonSampleFile = `${samplesPath}/cli/python.cli.sample.py`;
 
   beforeAll(() => {
-    const binPath = execSync('npm bin')
-      .toString()
-      .trim();
+    const binPath = execSync('npm bin').toString().trim();
     const tsNodePath = `${binPath}/ts-node`;
     const cliFile: string = `${__dirname}/cli.ts`;
     cliPath = `${tsNodePath} ${cliFile}`;

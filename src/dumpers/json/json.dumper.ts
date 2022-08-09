@@ -1,7 +1,7 @@
 import { EnumFile } from '../../models/enum-file/enum-file.model';
 import {
   EnumValue,
-  EnumValueType
+  EnumValueType,
 } from '../../models/enum-value/enum-value.model';
 import { Language } from '../../utils/language.enums';
 import { FileDumper } from '../file.dumper';
@@ -21,10 +21,10 @@ export class JsonDumper extends FileDumper {
   get entries(): string {
     const jsonEnum: JsonEnum = {};
 
-    this.enumFile.entries.forEach(entry => {
+    this.enumFile.entries.forEach((entry) => {
       jsonEnum[entry.name] = {};
 
-      entry.values.forEach(enumValue => {
+      entry.values.forEach((enumValue) => {
         jsonEnum[entry.name][enumValue.name] = enumValue.value;
       });
     });

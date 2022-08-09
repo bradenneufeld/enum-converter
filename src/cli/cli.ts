@@ -3,7 +3,7 @@ import { writeFileSync } from 'fs';
 import { Arguments } from 'yargs';
 import {
   ApiConfiguration,
-  ConfigurationOptions
+  ConfigurationOptions,
 } from '../config/configuration-options.type';
 import { CLI_ARGS } from './args';
 import { convertApi } from './convert';

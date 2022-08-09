@@ -18,7 +18,7 @@ export enum StringStyle {
   SnakeCase = 'snake',
   SwapCase = 'swap',
   TitleCase = 'title',
-  UpperCase = 'upper'
+  UpperCase = 'upper',
 }
 
 export const StringStyleTypes: string[] = Object.values(StringStyle);

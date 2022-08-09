@@ -2,7 +2,6 @@ import * as path from 'path';
 import { EnumValue } from '../../models/enum-value/enum-value.model';
 import { TypescriptParser } from './typescript.parser';
 
-
 describe('Typescript Parser', () => {
   it('should parse the sample file', () => {
     const fullPath = path.resolve(

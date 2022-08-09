@@ -4,7 +4,7 @@ import { EnumEntry } from '../enum-entry/enum-entry.model';
 
 export enum EnumsOrder {
   Ascending = 'asc',
-  Descending = 'desc'
+  Descending = 'desc',
 }
 
 export class EnumFile {

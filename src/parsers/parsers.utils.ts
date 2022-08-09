@@ -25,9 +25,7 @@ export function parserFromLanguage(language: Language): FileParser {
 
 export function languageFromFilePath(filePath: string): Language {
   if (filePath) {
-    const fileExtension: string = extname(filePath)
-      .toLowerCase()
-      .slice(1);
+    const fileExtension: string = extname(filePath).toLowerCase().slice(1);
 
     switch (fileExtension) {
       case LanguageSuffix.Json:

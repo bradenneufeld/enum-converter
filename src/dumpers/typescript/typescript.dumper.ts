@@ -14,20 +14,21 @@ export class TypescriptDumper extends FileDumper {
   get entries(): string {
     const entries: string[] = [];
 
-    this.enumFile.entries.forEach(entry => {
+    this.enumFile.entries.forEach((entry) => {
       let entryString: string = '';
 
       // create entry class
       entryString += `enum ${entry.name} {\n`;
 
-      const entryValues: string[] = entry.values.map(
-        enumValue =>
-          enumValue.isAutomatic
-            ? `${enumValue.name}`
-            : `${enumValue.name} = ${this.getEnumValue(enumValue)}`
+      const entryValues: string[] = entry.values.map((enumValue) =>
+        enumValue.isAutomatic
+          ? `${enumValue.name}`
+          : `${enumValue.name} = ${this.getEnumValue(enumValue)}`
       );
 
-      entryString += entryValues.map(valueStr => `   ${valueStr}`).join(',\n');
+      entryString += entryValues
+        .map((valueStr) => `   ${valueStr}`)
+        .join(',\n');
       entryString += '\n}\n';
 
       entries.push(entryString);
@@ -36,14 +37,17 @@ export class TypescriptDumper extends FileDumper {
     return entries.join('\n');
   }
 
-  private getEnumValue(enumValue: EnumValue): string {
+  private getEnumValue(enumValue: EnumValue): string | object | null {
     if (enumValue && enumValue.value !== undefined) {
+      console.log("typeof enumValue.value", typeof enumValue.value)
       switch (typeof enumValue.value) {
         case 'string':
           return `'${enumValue.value}'`;
         case 'number':
         case 'boolean':
           return `${enumValue.value}`;
+        case 'object':
+          return JSON.stringify(enumValue.value);
         default:
           break;
       }

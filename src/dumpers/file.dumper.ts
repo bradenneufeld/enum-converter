@@ -72,7 +72,7 @@ export abstract class FileDumper {
 
     // style names
     if (config.nameStyle !== undefined) {
-      this.enumFile.entries.forEach(entry => {
+      this.enumFile.entries.forEach((entry) => {
         entry.styleName(config.nameStyle!);
       });
     }
@@ -80,13 +80,15 @@ export abstract class FileDumper {
     // style keys
     if (config.keyStyle) {
       const enumValuesStyle: StringStyle = config.keyStyle;
-      this.enumFile.entries.forEach(entry => entry.styleKeys(enumValuesStyle));
+      this.enumFile.entries.forEach((entry) =>
+        entry.styleKeys(enumValuesStyle)
+      );
     }
 
     // style values (strings only)
     if (config.valueStyle) {
       const enumValuesStyle: StringStyle = config.valueStyle;
-      this.enumFile.entries.forEach(entry =>
+      this.enumFile.entries.forEach((entry) =>
         entry.styleValues(enumValuesStyle)
       );
     }
@@ -95,7 +97,7 @@ export abstract class FileDumper {
     if (config.sortValues !== undefined) {
       const enumValuesOrder: ValuesOrder = config.sortValues;
 
-      this.enumFile.entries.forEach(entry => {
+      this.enumFile.entries.forEach((entry) => {
         entry.sortEnumValues(enumValuesOrder);
       });
     }

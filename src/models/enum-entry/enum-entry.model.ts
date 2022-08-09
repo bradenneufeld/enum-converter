@@ -8,7 +8,7 @@ export enum ValuesOrder {
   NameAscending = 'name_asc',
   NameDescending = 'name_desc',
   ValueAscending = 'value_asc',
-  ValueDescending = 'value_desc'
+  ValueDescending = 'value_desc',
 }
 
 export class EnumEntry {
@@ -19,11 +19,11 @@ export class EnumEntry {
   }
 
   styleKeys(style: StringStyle): void {
-    this.values.forEach(value => value.styleName(style));
+    this.values.forEach((value) => value.styleName(style));
   }
 
   styleValues(style: StringStyle): void {
-    this.values.forEach(value => value.styleValue(style));
+    this.values.forEach((value) => value.styleValue(style));
   }
 
   sortEnumValues(enumValueOrder: ValuesOrder): void {

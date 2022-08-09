@@ -3,7 +3,7 @@ import { parse } from 'java-ast';
 import {
   EnumConstantContext,
   EnumDeclarationContext,
-  ExpressionContext
+  ExpressionContext,
 } from 'java-ast/dist/parser/JavaParser';
 import { EnumValue } from '../../models';
 import { EnumEntry } from '../../models/enum-entry/enum-entry.model';

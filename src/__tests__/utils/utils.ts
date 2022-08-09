@@ -8,7 +8,7 @@ SAMPLE_ENUM_FILE.entries.push(
   new EnumEntry('EnumA', [
     new EnumValue('NameA1', 1),
     new EnumValue('NameA2', 2),
-    new EnumValue('NameA3', 3)
+    new EnumValue('NameA3', 3),
   ])
 );
 
@@ -16,6 +16,6 @@ SAMPLE_ENUM_FILE.entries.push(
   new EnumEntry('EnumB', [
     new EnumValue('NameB1', 1),
     new EnumValue('NameB2', 2),
-    new EnumValue('NameB3', 3)
+    new EnumValue('NameB3', 3),
   ])
 );

@@ -3,7 +3,6 @@ import { EnumFile } from '../../models/enum-file/enum-file.model';
 import { EnumValue } from '../../models/enum-value/enum-value.model';
 import { JsonParser } from './json.parser';
 
-
 describe('Json Parser', () => {
   let parser: JsonParser;
 
@@ -12,7 +11,10 @@ describe('Json Parser', () => {
   });
 
   it('should parse the basic sample file', () => {
-    const samplePath = resolve(__dirname, '../../__tests__/samples/basic/json.basic.sample.json')
+    const samplePath = resolve(
+      __dirname,
+      '../../__tests__/samples/basic/json.basic.sample.json'
+    );
     parser.parseFile(samplePath);
     const enumFile: EnumFile = parser.enumFile;
 
@@ -30,8 +32,8 @@ describe('Json Parser', () => {
       Colors: {
         Blue: 'Blue',
         Green: 1,
-        Yellow: 'Yellow'
-      }
+        Yellow: 'Yellow',
+      },
     };
 
     parser.parseString(JSON.stringify(sampleObj));
@@ -48,8 +50,8 @@ describe('Json Parser', () => {
       Colors: {
         Blue: 1,
         Green: 2,
-        Yellow: 5
-      }
+        Yellow: 5,
+      },
     };
 
     parser.parseString(JSON.stringify(sampleObj));
@@ -75,8 +77,8 @@ describe('Json Parser', () => {
       Colors: {
         Blue: 'Blue',
         Green: 'Green',
-        Yellow: 'Yellow'
-      }
+        Yellow: 'Yellow',
+      },
     };
 
     parser.parseString(JSON.stringify(sampleObj));
@@ -102,8 +104,8 @@ describe('Json Parser', () => {
       Colors: {
         Blue: true,
         Green: false,
-        Yellow: true
-      }
+        Yellow: true,
+      },
     };
 
     parser.parseString(JSON.stringify(sampleObj));
@@ -129,8 +131,8 @@ describe('Json Parser', () => {
       Colors: {
         Blue: 1,
         Green: null,
-        Yellow: 5
-      }
+        Yellow: 5,
+      },
     };
 
     parser.parseString(JSON.stringify(sampleObj));
@@ -161,8 +163,8 @@ describe('Json Parser', () => {
         Blue: 'Blue',
         Green: 1,
         Red: null,
-        Yellow: false
-      }
+        Yellow: false,
+      },
     };
 
     parser.parseString(JSON.stringify(sampleObj));

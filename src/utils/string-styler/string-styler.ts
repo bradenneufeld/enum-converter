@@ -1,16 +1,18 @@
 import {
-  camelCase, constantCase,
+  camelCase,
+  constantCase,
   dotCase,
-  headerCase, paramCase,
+  headerCase,
+  paramCase,
   pascalCase,
   pathCase,
   sentenceCase,
-  snakeCase
-} from "change-case";
-import { lowerCase } from "lower-case";
-import { swapCase } from "swap-case";
-import { titleCase } from "title-case";
-import { upperCase } from "upper-case";
+  snakeCase,
+} from 'change-case';
+import { lowerCase } from 'lower-case';
+import { swapCase } from 'swap-case';
+import { titleCase } from 'title-case';
+import { upperCase } from 'upper-case';
 import { StringStyle } from './string-styler.enums';
 
 /**

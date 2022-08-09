@@ -14,13 +14,13 @@ export class PythonDumper extends FileDumper {
   get entries(): string {
     const entries: string[] = [];
 
-    this.enumFile.entries.forEach(entry => {
+    this.enumFile.entries.forEach((entry) => {
       let entryString: string = '';
 
       // create entry class
       entryString += `class ${entry.name}(Enum):\n`;
 
-      entry.values.forEach(enumValue => {
+      entry.values.forEach((enumValue) => {
         entryString += `    ${enumValue.name} = ${this.getEnumValue(
           enumValue
         )}\n`;
