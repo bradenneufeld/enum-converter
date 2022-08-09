@@ -31,6 +31,7 @@
     "build/"
   ],
   "scripts": {
+    "prepare": "yarn run build -p tsconfig.prod.json",
     "build:prod": "yarn run build -p tsconfig.prod.json",
     "build:watch": "yarn run build -w",
     "build": "tsc",
